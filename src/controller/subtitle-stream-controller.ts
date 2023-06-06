@@ -379,7 +379,7 @@ export class SubtitleStreamController
 
       // Expand range of subs loaded by one target-duration in either direction to make up for misaligned playlists
       const trackDetails = track.details as LevelDetails;
-      const targetDuration = trackDetails.targetduration;
+      const targetDuration = trackDetails.targetduration > 15? 15: trackDetails.targetduration;
       const { config } = this;
       const currentTime = this.getLoadPosition();
       const bufferedInfo = BufferHelper.bufferedInfo(
