@@ -147,7 +147,7 @@ export class SubtitleStreamController
         return;
       }
       const trackDetails = levels[currentTrackId].details as LevelDetails;
-      const targetDuration = trackDetails.targetduration;
+      const targetDuration = Math.min(trackDetails.targetduration, 15);
       const endOffsetSubtitles = endOffset - targetDuration;
       if (endOffsetSubtitles <= 0) {
         return;
@@ -348,7 +348,7 @@ export class SubtitleStreamController
 
       // Expand range of subs loaded by one target-duration in either direction to make up for misaligned playlists
       const trackDetails = levels[currentTrackId].details as LevelDetails;
-      const targetDuration = trackDetails.targetduration;
+      const targetDuration = Math.min(trackDetails.targetduration, 15);
       const { config, media } = this;
       const bufferedInfo = BufferHelper.bufferedInfo(
         this.mediaBufferTimeRanges,
