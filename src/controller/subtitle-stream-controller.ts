@@ -25,6 +25,8 @@ import type {
 
 const TICK_INTERVAL = 500; // how often to tick in ms
 
+const MAX_TARGET_DURATION = 8;
+
 interface TimeRange {
   start: number;
   end: number;
@@ -147,7 +149,7 @@ export class SubtitleStreamController
         return;
       }
       const trackDetails = levels[currentTrackId].details as LevelDetails;
-      const targetDuration = Math.min(trackDetails.targetduration, 15);
+      const targetDuration = Math.min(trackDetails.targetduration, MAX_TARGET_DURATION);
       const endOffsetSubtitles = endOffset - targetDuration;
       if (endOffsetSubtitles <= 0) {
         return;
@@ -348,7 +350,7 @@ export class SubtitleStreamController
 
       // Expand range of subs loaded by one target-duration in either direction to make up for misaligned playlists
       const trackDetails = levels[currentTrackId].details as LevelDetails;
-      const targetDuration = Math.min(trackDetails.targetduration, 15);
+      const targetDuration = Math.min(trackDetails.targetduration, MAX_TARGET_DURATION);
       const { config, media } = this;
       const bufferedInfo = BufferHelper.bufferedInfo(
         this.mediaBufferTimeRanges,
