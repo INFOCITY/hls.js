@@ -10992,6 +10992,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Objec
 
 var TICK_INTERVAL = 500; // how often to tick in ms
 
+var MAX_TARGET_DURATION = 8;
 var SubtitleStreamController = /*#__PURE__*/function (_BaseStreamController) {
   _inheritsLoose(SubtitleStreamController, _BaseStreamController);
 
@@ -11117,7 +11118,7 @@ var SubtitleStreamController = /*#__PURE__*/function (_BaseStreamController) {
       }
 
       var trackDetails = levels[currentTrackId].details;
-      var targetDuration = Math.min(trackDetails.targetduration, 15);
+      var targetDuration = Math.min(trackDetails.targetduration, MAX_TARGET_DURATION);
       var endOffsetSubtitles = endOffset - targetDuration;
 
       if (endOffsetSubtitles <= 0) {
@@ -11307,7 +11308,7 @@ var SubtitleStreamController = /*#__PURE__*/function (_BaseStreamController) {
 
 
       var trackDetails = levels[currentTrackId].details;
-      var targetDuration = Math.min(trackDetails.targetduration, 15);
+      var targetDuration = Math.min(trackDetails.targetduration, MAX_TARGET_DURATION);
       var config = this.config,
           media = this.media;
       var bufferedInfo = _utils_buffer_helper__WEBPACK_IMPORTED_MODULE_1__["BufferHelper"].bufferedInfo(this.mediaBufferTimeRanges, media.currentTime - targetDuration, config.maxBufferHole);
