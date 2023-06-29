@@ -11080,17 +11080,19 @@ var SubtitleStreamController = /*#__PURE__*/function (_BaseStreamController) {
     // so we can re-use the logic used to detect how much has been buffered
 
 
-    var timeRange;
-    var fragStart = frag.start;
+    var timeRange; // const fragStart = frag.start;
+
+    var fragStart = Math.round(frag.start * 1000) / 1000;
 
     for (var i = 0; i < buffered.length; i++) {
       if (fragStart >= buffered[i].start && fragStart <= buffered[i].end) {
         timeRange = buffered[i];
         break;
       }
-    }
+    } // const fragEnd = frag.start + frag.duration;
 
-    var fragEnd = frag.start + frag.duration;
+
+    var fragEnd = Math.round((frag.start + frag.duration) * 1000) / 1000;
 
     if (timeRange) {
       timeRange.end = fragEnd;
