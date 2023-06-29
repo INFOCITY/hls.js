@@ -116,7 +116,8 @@ export class SubtitleStreamController
     // Create/update a buffered array matching the interface used by BufferHelper.bufferedInfo
     // so we can re-use the logic used to detect how much has been buffered
     let timeRange: TimeRange | undefined;
-    const fragStart = frag.start;
+    // const fragStart = frag.start;
+    const fragStart = (Math.round((frag.start) * 1000)) / 1000;
     for (let i = 0; i < buffered.length; i++) {
       if (fragStart >= buffered[i].start && fragStart <= buffered[i].end) {
         timeRange = buffered[i];
@@ -124,7 +125,8 @@ export class SubtitleStreamController
       }
     }
 
-    const fragEnd = frag.start + frag.duration;
+    // const fragEnd = frag.start + frag.duration;
+    const fragEnd = (Math.round((frag.start + frag.duration) * 1000)) / 1000;
     if (timeRange) {
       timeRange.end = fragEnd;
     } else {
