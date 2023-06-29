@@ -21,10 +21,10 @@
     "access": "public"
   },
   "scripts": {
-    "build": "webpack --progress && npm run build:types",
-    "build:ci": "webpack && tsc --build tsconfig-lib.json && api-extractor run",
-    "build:debug": "webpack --progress --env debug --env demo",
-    "build:watch": "webpack --progress --env debug --env demo --watch",
+    "build": "NODE_OPTIONS='--openssl-legacy-provider' webpack --progress && npm run build:types",
+    "build:ci": "NODE_OPTIONS='--openssl-legacy-provider' webpack && tsc --build tsconfig-lib.json && api-extractor run",
+    "build:debug": "NODE_OPTIONS='--openssl-legacy-provider' webpack --progress --env debug --env demo",
+    "build:watch": "NODE_OPTIONS='--openssl-legacy-provider' webpack --progress --env debug --env demo --watch",
     "build:types": "tsc --build tsconfig-lib.json && api-extractor run --local",
     "dev": "webpack serve --progress --env debug --env demo --port 8000 --static .",
     "docs": "esdoc",
