@@ -6893,7 +6893,7 @@ function findFragmentByPTS(fragPrevious, fragments, bufferEnd, maxFragLookUpTole
 
   var foundFragment = _utils_binary_search__WEBPACK_IMPORTED_MODULE_1__["default"].search(fragments, fragmentWithinToleranceTest.bind(null, bufferEnd, maxFragLookUpTolerance));
 
-  if (foundFragment) {
+  if (foundFragment && (foundFragment !== fragPrevious || !fragNext)) {
     return foundFragment;
   } // If no match was found return the next fragment after fragPrevious, or null
 
@@ -6917,7 +6917,10 @@ function fragmentWithinToleranceTest(bufferEnd, maxFragLookUpTolerance, candidat
     maxFragLookUpTolerance = 0;
   }
 
-  // offset should be within fragment boundary - config.maxFragLookUpTolerance
+  // eagerly accept an accurate match (no tolerance)
+  if (candidate.start <= bufferEnd && candidate.start + candidate.duration > bufferEnd) {
+    return 0;
+  } // offset should be within fragment boundary - config.maxFragLookUpTolerance
   // this is to cope with situations like
   // bufferEnd = 9.991
   // frag[Ø] : [0,10]
@@ -6931,6 +6934,8 @@ function fragmentWithinToleranceTest(bufferEnd, maxFragLookUpTolerance, candidat
   //  return -1             return 0                 return 1
   // logger.log(`level/sn/start/end/bufEnd:${level}/${candidate.sn}/${candidate.start}/${(candidate.start+candidate.duration)}/${bufferEnd}`);
   // Set the lookup tolerance to be small enough to detect the current segment - ensures we don't skip over very small segments
+
+
   var candidateLookupTolerance = Math.min(maxFragLookUpTolerance, candidate.duration + (candidate.deltaPTS ? candidate.deltaPTS : 0));
 
   if (candidate.start + candidate.duration - candidateLookupTolerance <= bufferEnd) {
