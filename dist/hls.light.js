@@ -1118,7 +1118,7 @@ function enableStreamingMode(config) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
+/* harmony import */ var _home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
 /* harmony import */ var _utils_ewma_bandwidth_estimator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/ewma-bandwidth-estimator */ "./src/utils/ewma-bandwidth-estimator.ts");
 /* harmony import */ var _events__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../events */ "./src/events.ts");
 /* harmony import */ var _utils_buffer_helper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/buffer-helper */ "./src/utils/buffer-helper.ts");
@@ -1286,7 +1286,7 @@ var AbrController = /*#__PURE__*/function () {
     }
 
     var bwEstimate = this.bwEstimator.getEstimate();
-    _utils_logger__WEBPACK_IMPORTED_MODULE_6__["logger"].warn("Fragment " + frag.sn + (part ? ' part ' + part.index : '') + " of level " + frag.level + " is loading too slowly and will cause an underbuffer; aborting and switching to level " + nextLoadLevel + "\n      Current BW estimate: " + (Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(bwEstimate) ? (bwEstimate / 1024).toFixed(3) : 'Unknown') + " Kb/s\n      Estimated load time for current fragment: " + fragLoadedDelay.toFixed(3) + " s\n      Estimated load time for the next fragment: " + fragLevelNextLoadedDelay.toFixed(3) + " s\n      Time to underbuffer: " + bufferStarvationDelay.toFixed(3) + " s");
+    _utils_logger__WEBPACK_IMPORTED_MODULE_6__["logger"].warn("Fragment " + frag.sn + (part ? ' part ' + part.index : '') + " of level " + frag.level + " is loading too slowly and will cause an underbuffer; aborting and switching to level " + nextLoadLevel + "\n      Current BW estimate: " + (Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(bwEstimate) ? (bwEstimate / 1024).toFixed(3) : 'Unknown') + " Kb/s\n      Estimated load time for current fragment: " + fragLoadedDelay.toFixed(3) + " s\n      Estimated load time for the next fragment: " + fragLevelNextLoadedDelay.toFixed(3) + " s\n      Time to underbuffer: " + bufferStarvationDelay.toFixed(3) + " s");
     hls.nextLoadLevel = nextLoadLevel;
     this.bwEstimator.sample(requestDelay, stats.loaded);
     this.clearTimer();
@@ -1307,7 +1307,7 @@ var AbrController = /*#__PURE__*/function () {
     var frag = _ref.frag,
         part = _ref.part;
 
-    if (frag.type === _types_loader__WEBPACK_IMPORTED_MODULE_5__["PlaylistLevelType"].MAIN && Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(frag.sn)) {
+    if (frag.type === _types_loader__WEBPACK_IMPORTED_MODULE_5__["PlaylistLevelType"].MAIN && Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(frag.sn)) {
       var stats = part ? part.stats : frag.stats;
       var duration = part ? part.duration : frag.duration; // stop monitoring bw once frag loaded
 
@@ -1532,7 +1532,7 @@ var AbrController = /*#__PURE__*/function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return BasePlaylistController; });
-/* harmony import */ var _Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
+/* harmony import */ var _home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
 /* harmony import */ var _types_level__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../types/level */ "./src/types/level.ts");
 /* harmony import */ var _level_helper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./level-helper */ "./src/controller/level-helper.ts");
 /* harmony import */ var _utils_logger__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/logger */ "./src/utils/logger.ts");
@@ -1607,8 +1607,8 @@ var BasePlaylistController = /*#__PURE__*/function () {
             }
           }
 
-          if (Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(msn)) {
-            return new _types_level__WEBPACK_IMPORTED_MODULE_1__["HlsUrlParameters"](msn, Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(part) ? part : undefined, _types_level__WEBPACK_IMPORTED_MODULE_1__["HlsSkip"].No);
+          if (Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(msn)) {
+            return new _types_level__WEBPACK_IMPORTED_MODULE_1__["HlsUrlParameters"](msn, Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(part) ? part : undefined, _types_level__WEBPACK_IMPORTED_MODULE_1__["HlsSkip"].No);
           }
         }
       }
@@ -1785,7 +1785,7 @@ var BasePlaylistController = /*#__PURE__*/function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "State", function() { return State; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return BaseStreamController; });
-/* harmony import */ var _Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
+/* harmony import */ var _home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
 /* harmony import */ var _task_loop__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../task-loop */ "./src/task-loop.ts");
 /* harmony import */ var _fragment_tracker__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./fragment-tracker */ "./src/controller/fragment-tracker.ts");
 /* harmony import */ var _utils_buffer_helper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/buffer-helper */ "./src/utils/buffer-helper.ts");
@@ -1993,7 +1993,7 @@ var BaseStreamController = /*#__PURE__*/function (_TaskLoop) {
         state = this.state;
     var currentTime = media ? media.currentTime : 0;
     var bufferInfo = _utils_buffer_helper__WEBPACK_IMPORTED_MODULE_3__["BufferHelper"].bufferInfo(mediaBuffer || media, currentTime, config.maxBufferHole);
-    this.log("media seeking to " + (Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(currentTime) ? currentTime.toFixed(3) : currentTime) + ", state: " + state);
+    this.log("media seeking to " + (Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(currentTime) ? currentTime.toFixed(3) : currentTime) + ", state: " + state);
 
     if (state === State.ENDED) {
       this.resetLoadingState();
@@ -2313,7 +2313,7 @@ var BaseStreamController = /*#__PURE__*/function (_TaskLoop) {
 
     this.log("Loading fragment " + frag.sn + " cc: " + frag.cc + " " + (details ? 'of [' + details.startSN + '-' + details.endSN + '] ' : '') + (this.logPrefix === '[stream-controller]' ? 'level' : 'track') + ": " + frag.level + ", target: " + parseFloat(targetBufferTime.toFixed(3))); // Don't update nextLoadPosition for fragments which are not buffered
 
-    if (Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(frag.sn) && !this.bitrateTest) {
+    if (Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(frag.sn) && !this.bitrateTest) {
       this.nextLoadPosition = frag.start + frag.duration;
     }
 
@@ -2485,7 +2485,7 @@ var BaseStreamController = /*#__PURE__*/function (_TaskLoop) {
     var config = this.config;
     var pos = this.getLoadPosition();
 
-    if (!Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(pos)) {
+    if (!Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(pos)) {
       return null;
     }
 
@@ -2781,7 +2781,7 @@ var BaseStreamController = /*#__PURE__*/function (_TaskLoop) {
     var slidingStart = details.fragments[0].start;
     var firstLevelLoad = !previousDetails;
 
-    var aligned = details.alignedSliding && Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(slidingStart);
+    var aligned = details.alignedSliding && Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(slidingStart);
 
     if (firstLevelLoad || !aligned && !slidingStart) {
       Object(_utils_discontinuities__WEBPACK_IMPORTED_MODULE_9__["alignStream"])(fragPrevious, lastLevel, details);
@@ -2811,7 +2811,7 @@ var BaseStreamController = /*#__PURE__*/function (_TaskLoop) {
       // first, check if start time offset has been set in playlist, if yes, use this value
       var startTimeOffset = details.startTimeOffset;
 
-      if (Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(startTimeOffset)) {
+      if (Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(startTimeOffset)) {
         startPosition = sliding + startTimeOffset;
 
         if (startTimeOffset < 0) {
@@ -3038,7 +3038,7 @@ var BaseStreamController = /*#__PURE__*/function (_TaskLoop) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return BufferController; });
-/* harmony import */ var _Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
+/* harmony import */ var _home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
 /* harmony import */ var _events__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../events */ "./src/events.ts");
 /* harmony import */ var _utils_logger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/logger */ "./src/utils/logger.ts");
 /* harmony import */ var _errors__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../errors */ "./src/errors.ts");
@@ -3628,7 +3628,7 @@ var BufferController = /*#__PURE__*/function () {
 
     var backBufferLength = details.live && hls.config.liveBackBufferLength !== null ? hls.config.liveBackBufferLength : hls.config.backBufferLength;
 
-    if (!Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(backBufferLength) || backBufferLength < 0) {
+    if (!Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(backBufferLength) || backBufferLength < 0) {
       return;
     }
 
@@ -3680,14 +3680,14 @@ var BufferController = /*#__PURE__*/function () {
         mediaSource = this.mediaSource;
     var levelDuration = details.fragments[0].start + details.totalduration;
     var mediaDuration = media.duration;
-    var msDuration = Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(mediaSource.duration) ? mediaSource.duration : 0;
+    var msDuration = Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(mediaSource.duration) ? mediaSource.duration : 0;
 
     if (details.live && hls.config.liveDurationInfinity) {
       // Override duration to Infinity
       _utils_logger__WEBPACK_IMPORTED_MODULE_2__["logger"].log('[buffer-controller]: Media Source duration is set to Infinity');
       mediaSource.duration = Infinity;
       this.updateSeekableRange(details);
-    } else if (levelDuration > msDuration && levelDuration > mediaDuration || !Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(mediaDuration)) {
+    } else if (levelDuration > msDuration && levelDuration > mediaDuration || !Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(mediaDuration)) {
       // levelDuration was the last value we set.
       // not using mediaSource.duration as the browser may tweak this value
       // only update Media Source duration if its value increase, this is to avoid
@@ -3845,8 +3845,8 @@ var BufferController = /*#__PURE__*/function () {
       return;
     }
 
-    var mediaDuration = Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(media.duration) ? media.duration : Infinity;
-    var msDuration = Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(mediaSource.duration) ? mediaSource.duration : Infinity;
+    var mediaDuration = Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(media.duration) ? media.duration : Infinity;
+    var msDuration = Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(mediaSource.duration) ? mediaSource.duration : Infinity;
     var removeStart = Math.max(0, startOffset);
     var removeEnd = Math.min(endOffset, mediaDuration, msDuration);
 
@@ -4470,7 +4470,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fragmentWithinToleranceTest", function() { return fragmentWithinToleranceTest; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "pdtWithinToleranceTest", function() { return pdtWithinToleranceTest; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "findFragWithCC", function() { return findFragWithCC; });
-/* harmony import */ var _Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
+/* harmony import */ var _home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
 /* harmony import */ var _utils_binary_search__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/binary-search */ "./src/utils/binary-search.ts");
 
 
@@ -4483,7 +4483,7 @@ __webpack_require__.r(__webpack_exports__);
  * @returns {*|null} fragment - The best matching fragment
  */
 function findFragmentByPDT(fragments, PDTValue, maxFragLookUpTolerance) {
-  if (PDTValue === null || !Array.isArray(fragments) || !fragments.length || !Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(PDTValue)) {
+  if (PDTValue === null || !Array.isArray(fragments) || !fragments.length || !Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(PDTValue)) {
     return null;
   } // if less than start
 
@@ -5459,7 +5459,7 @@ var GapController = /*#__PURE__*/function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
+/* harmony import */ var _home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
 /* harmony import */ var _events__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../events */ "./src/events.ts");
 /* harmony import */ var _utils_texttrack_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/texttrack-utils */ "./src/utils/texttrack-utils.ts");
 /* harmony import */ var _demux_id3__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../demux/id3 */ "./src/demux/id3.ts");
@@ -5742,7 +5742,7 @@ var ID3TrackController = /*#__PURE__*/function () {
 
     var lastFragment = details.fragments[details.fragments.length - 1];
 
-    if (ids.length === 0 || !Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(lastFragment === null || lastFragment === void 0 ? void 0 : lastFragment.programDateTime)) {
+    if (ids.length === 0 || !Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(lastFragment === null || lastFragment === void 0 ? void 0 : lastFragment.programDateTime)) {
       return;
     }
 
@@ -6773,7 +6773,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "computeReloadInterval", function() { return computeReloadInterval; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getFragmentWithSN", function() { return getFragmentWithSN; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getPartWith", function() { return getPartWith; });
-/* harmony import */ var _Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
+/* harmony import */ var _home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
 /* harmony import */ var _utils_logger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/logger */ "./src/utils/logger.ts");
 /* harmony import */ var _loader_date_range__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../loader/date-range */ "./src/loader/date-range.ts");
 
@@ -6826,7 +6826,7 @@ function updatePTS(fragments, fromIdx, toIdx) {
 function updateFromToPTS(fragFrom, fragTo) {
   var fragToPTS = fragTo.startPTS; // if we know startPTS[toIdx]
 
-  if (Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(fragToPTS)) {
+  if (Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(fragToPTS)) {
     // update fragment duration.
     // it helps to fix drifts between playlist reported duration and fragment real duration
     var duration = 0;
@@ -6874,11 +6874,11 @@ function updateFragPTSDTS(details, frag, startPTS, endPTS, startDTS, endDTS) {
   var fragStartPts = frag.startPTS;
   var fragEndPts = frag.endPTS;
 
-  if (Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(fragStartPts)) {
+  if (Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(fragStartPts)) {
     // delta PTS between audio and video
     var deltaPTS = Math.abs(fragStartPts - startPTS);
 
-    if (!Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(frag.deltaPTS)) {
+    if (!Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(frag.deltaPTS)) {
       frag.deltaPTS = deltaPTS;
     } else {
       frag.deltaPTS = Math.max(deltaPTS, frag.deltaPTS);
@@ -6965,7 +6965,7 @@ function mergeDetails(oldDetails, newDetails) {
       ccOffset = oldFrag.cc - newFrag.cc;
     }
 
-    if (Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(oldFrag.startPTS) && Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(oldFrag.endPTS)) {
+    if (Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(oldFrag.startPTS) && Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(oldFrag.endPTS)) {
       newFrag.start = newFrag.startPTS = oldFrag.startPTS;
       newFrag.startDTS = oldFrag.startDTS;
       newFrag.appendedPTS = oldFrag.appendedPTS;
@@ -7259,7 +7259,7 @@ function getPartWith(level, sn, partIndex) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return StreamController; });
-/* harmony import */ var _Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
+/* harmony import */ var _home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
 /* harmony import */ var _base_stream_controller__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./base-stream-controller */ "./src/controller/base-stream-controller.ts");
 /* harmony import */ var _is_supported__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../is-supported */ "./src/is-supported.ts");
 /* harmony import */ var _events__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../events */ "./src/events.ts");
@@ -7780,7 +7780,7 @@ var StreamController = /*#__PURE__*/function (_BaseStreamController) {
     var media = this.media;
     var currentTime = media ? media.currentTime : null;
 
-    if (Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(currentTime)) {
+    if (Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(currentTime)) {
       this.log("Media seeked to " + currentTime.toFixed(3));
     } // tick to speed up FRAG_CHANGED triggering
 
@@ -8293,7 +8293,7 @@ var StreamController = /*#__PURE__*/function (_BaseStreamController) {
       var initPTS = initSegment.initPTS;
       var timescale = initSegment.timescale;
 
-      if (Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(initPTS)) {
+      if (Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(initPTS)) {
         this.initPTS[frag.cc] = initPTS;
         hls.trigger(_events__WEBPACK_IMPORTED_MODULE_3__["Events"].INIT_PTS_FOUND, {
           frag: frag,
@@ -8570,7 +8570,7 @@ var StreamController = /*#__PURE__*/function (_BaseStreamController) {
         var currentTime = media.currentTime;
         var frag = this.currentFrag;
 
-        if (frag && Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(currentTime) && Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(frag.programDateTime)) {
+        if (frag && Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(currentTime) && Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(frag.programDateTime)) {
           var epocMs = frag.programDateTime + (currentTime - frag.start) * 1000;
           return new Date(epocMs);
         }
@@ -9573,7 +9573,7 @@ function appendFrame(track, data, offset, pts, frameIndex) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initPTSFn", function() { return initPTSFn; });
-/* harmony import */ var _Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
+/* harmony import */ var _home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
 /* harmony import */ var _demux_id3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../demux/id3 */ "./src/demux/id3.ts");
 /* harmony import */ var _types_demuxer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../types/demuxer */ "./src/types/demuxer.ts");
 /* harmony import */ var _dummy_demuxed_track__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dummy-demuxed-track */ "./src/demux/dummy-demuxed-track.ts");
@@ -9732,7 +9732,7 @@ var BaseAudioDemuxer = /*#__PURE__*/function () {
 
 
 var initPTSFn = function initPTSFn(timestamp, timeOffset) {
-  return Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(timestamp) ? timestamp * 90 : timeOffset * 90000;
+  return Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(timestamp) ? timestamp * 90 : timeOffset * 90000;
 };
 /* harmony default export */ __webpack_exports__["default"] = (BaseAudioDemuxer);
 
@@ -10762,7 +10762,7 @@ MP3Demuxer.minProbeByteLength = 4;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
+/* harmony import */ var _home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
 /* harmony import */ var _types_demuxer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../types/demuxer */ "./src/types/demuxer.ts");
 /* harmony import */ var _utils_mp4_tools__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/mp4-tools */ "./src/utils/mp4-tools.ts");
 /* harmony import */ var _dummy_demuxed_track__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dummy-demuxed-track */ "./src/demux/dummy-demuxed-track.ts");
@@ -10892,7 +10892,7 @@ var MP4Demuxer = /*#__PURE__*/function () {
           var emsgInfo = Object(_utils_mp4_tools__WEBPACK_IMPORTED_MODULE_2__["parseEmsg"])(data);
 
           if (emsgSchemePattern.test(emsgInfo.schemeIdUri)) {
-            var pts = Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(emsgInfo.presentationTime) ? emsgInfo.presentationTime / emsgInfo.timeScale : timeOffset + emsgInfo.presentationTimeDelta / emsgInfo.timeScale;
+            var pts = Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(emsgInfo.presentationTime) ? emsgInfo.presentationTime / emsgInfo.timeScale : timeOffset + emsgInfo.presentationTimeDelta / emsgInfo.timeScale;
             var payload = emsgInfo.payload;
             id3Track.samples.push({
               data: payload,
@@ -14486,7 +14486,7 @@ function changeTypeSupported() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DateRangeAttribute", function() { return DateRangeAttribute; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DateRange", function() { return DateRange; });
-/* harmony import */ var _Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
+/* harmony import */ var _home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
 /* harmony import */ var _utils_attr_list__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/attr-list */ "./src/utils/attr-list.ts");
 /* harmony import */ var _utils_logger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/logger */ "./src/utils/logger.ts");
 
@@ -14543,7 +14543,7 @@ var DateRange = /*#__PURE__*/function () {
     if (DateRangeAttribute.END_DATE in this.attr) {
       var endDate = new Date(this.attr[DateRangeAttribute.END_DATE]);
 
-      if (Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(endDate.getTime())) {
+      if (Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(endDate.getTime())) {
         this._endDate = endDate;
       }
     }
@@ -14585,7 +14585,7 @@ var DateRange = /*#__PURE__*/function () {
       if (DateRangeAttribute.DURATION in this.attr) {
         var duration = this.attr.decimalFloatingPoint(DateRangeAttribute.DURATION);
 
-        if (Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(duration)) {
+        if (Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(duration)) {
           return duration;
         }
       } else if (this._endDate) {
@@ -14611,7 +14611,7 @@ var DateRange = /*#__PURE__*/function () {
   }, {
     key: "isValid",
     get: function get() {
-      return !!this.id && !this._badValueForSameId && Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(this.startDate.getTime()) && (this.duration === null || this.duration >= 0) && (!this.endOnNext || !!this.class);
+      return !!this.id && !this._badValueForSameId && Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(this.startDate.getTime()) && (this.duration === null || this.duration >= 0) && (!this.endOnNext || !!this.class);
     }
   }]);
 
@@ -14631,7 +14631,7 @@ var DateRange = /*#__PURE__*/function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return FragmentLoader; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoadError", function() { return LoadError; });
-/* harmony import */ var _Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
+/* harmony import */ var _home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
 /* harmony import */ var _errors__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../errors */ "./src/errors.ts");
 
 
@@ -14916,7 +14916,7 @@ function createLoaderContext(frag, part) {
   var start = segment.byteRangeStartOffset;
   var end = segment.byteRangeEndOffset;
 
-  if (Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(start) && Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(end)) {
+  if (Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(start) && Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(end)) {
     loaderContext.rangeStart = start;
     loaderContext.rangeEnd = end;
   }
@@ -14958,7 +14958,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BaseSegment", function() { return BaseSegment; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Fragment", function() { return Fragment; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Part", function() { return Part; });
-/* harmony import */ var _Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
+/* harmony import */ var _home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
 /* harmony import */ var url_toolkit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! url-toolkit */ "./node_modules/url-toolkit/src/url-toolkit.js");
 /* harmony import */ var url_toolkit__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(url_toolkit__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _utils_logger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/logger */ "./src/utils/logger.ts");
@@ -15230,11 +15230,11 @@ var Fragment = /*#__PURE__*/function (_BaseSegment) {
         return null;
       }
 
-      if (!Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(this.programDateTime)) {
+      if (!Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(this.programDateTime)) {
         return null;
       }
 
-      var duration = !Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(this.duration) ? 0 : this.duration;
+      var duration = !Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(this.duration) ? 0 : this.duration;
       return this.programDateTime + duration * 1000;
     }
   }, {
@@ -15496,7 +15496,7 @@ var KeyLoader = /*#__PURE__*/function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LevelDetails", function() { return LevelDetails; });
-/* harmony import */ var _Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
+/* harmony import */ var _home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
 
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -15581,7 +15581,7 @@ var LevelDetails = /*#__PURE__*/function () {
     key: "hasProgramDateTime",
     get: function get() {
       if (this.fragments.length) {
-        return Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(this.fragments[this.fragments.length - 1].programDateTime);
+        return Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(this.fragments[this.fragments.length - 1].programDateTime);
       }
 
       return false;
@@ -15769,7 +15769,7 @@ var LoadStats = function LoadStats() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return M3U8Parser; });
-/* harmony import */ var _Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
+/* harmony import */ var _home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
 /* harmony import */ var url_toolkit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! url-toolkit */ "./node_modules/url-toolkit/src/url-toolkit.js");
 /* harmony import */ var url_toolkit__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(url_toolkit__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _date_range__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./date-range */ "./src/loader/date-range.ts");
@@ -15984,7 +15984,7 @@ var M3U8Parser = /*#__PURE__*/function () {
         frag.tagList.push(title ? ['INF', duration, title] : ['INF', duration]);
       } else if (result[3]) {
         // url
-        if (Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(frag.duration)) {
+        if (Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(frag.duration)) {
           frag.start = totalduration;
 
           if (levelkey) {
@@ -16056,7 +16056,7 @@ var M3U8Parser = /*#__PURE__*/function () {
               var skipAttrs = new _utils_attr_list__WEBPACK_IMPORTED_MODULE_6__["AttrList"](value1);
               var skippedSegments = skipAttrs.decimalInteger('SKIPPED-SEGMENTS');
 
-              if (Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(skippedSegments)) {
+              if (Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(skippedSegments)) {
                 level.skippedSegments = skippedSegments; // This will result in fragments[] containing undefined values, which we will fill in with `mergeDetails`
 
                 for (var _i = skippedSegments; _i--;) {
@@ -16189,7 +16189,7 @@ var M3U8Parser = /*#__PURE__*/function () {
               var startAttrs = new _utils_attr_list__WEBPACK_IMPORTED_MODULE_6__["AttrList"](value1);
               var startTimeOffset = startAttrs.decimalFloatingPoint('TIME-OFFSET'); // TIME-OFFSET can be 0
 
-              if (Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(startTimeOffset)) {
+              if (Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(startTimeOffset)) {
                 level.startTimeOffset = startTimeOffset;
               }
 
@@ -16404,7 +16404,7 @@ function assignProgramDateTime(frag, prevFrag) {
     frag.programDateTime = prevFrag.endProgramDateTime;
   }
 
-  if (!Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(frag.programDateTime)) {
+  if (!Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(frag.programDateTime)) {
     frag.programDateTime = null;
     frag.rawProgramDateTime = null;
   }
@@ -16438,7 +16438,7 @@ function setInitSegment(frag, mapAttrs, id, levelkey) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
+/* harmony import */ var _home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
 /* harmony import */ var _events__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../events */ "./src/events.ts");
 /* harmony import */ var _errors__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../errors */ "./src/errors.ts");
 /* harmony import */ var _utils_logger__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/logger */ "./src/utils/logger.ts");
@@ -16836,8 +16836,8 @@ var PlaylistLoader = /*#__PURE__*/function () {
         level = context.level,
         type = context.type;
     var url = getResponseUrl(response, context);
-    var levelUrlId = Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(id) ? id : 0;
-    var levelId = Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(level) ? level : levelUrlId;
+    var levelUrlId = Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(id) ? id : 0;
+    var levelId = Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(level) ? level : levelUrlId;
     var levelType = mapContextToLevelType(context);
     var levelDetails = _m3u8_parser__WEBPACK_IMPORTED_MODULE_5__["default"].parseLevelPlaylist(response.data, url, levelId, levelType, levelUrlId);
 
@@ -17673,7 +17673,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "normalizePts", function() { return normalizePts; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "flushTextTrackMetadataCueSamples", function() { return flushTextTrackMetadataCueSamples; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "flushTextTrackUserdataCueSamples", function() { return flushTextTrackUserdataCueSamples; });
-/* harmony import */ var _Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
+/* harmony import */ var _home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
 /* harmony import */ var _aac_helper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./aac-helper */ "./src/remux/aac-helper.ts");
 /* harmony import */ var _mp4_generator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./mp4-generator */ "./src/remux/mp4-generator.ts");
 /* harmony import */ var _events__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../events */ "./src/events.ts");
@@ -17900,7 +17900,7 @@ var MP4Remuxer = /*#__PURE__*/function () {
     var videoSamples = videoTrack.samples;
     var typeSupported = this.typeSupported;
     var tracks = {};
-    var computePTSDTS = !Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(this._initPTS);
+    var computePTSDTS = !Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(this._initPTS);
     var container = 'audio/mp4';
     var initPTS;
     var initDTS;
@@ -18621,7 +18621,7 @@ var Mp4SampleFlags = function Mp4SampleFlags(isKeyframe) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
+/* harmony import */ var _home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
 /* harmony import */ var _mp4_remuxer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mp4-remuxer */ "./src/remux/mp4-remuxer.ts");
 /* harmony import */ var _utils_mp4_tools__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/mp4-tools */ "./src/utils/mp4-tools.ts");
 /* harmony import */ var _loader_fragment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../loader/fragment */ "./src/loader/fragment.ts");
@@ -18729,7 +18729,7 @@ var PassThroughRemuxer = /*#__PURE__*/function () {
     // lastEndDTS over timeOffset whenever possible; during progressive playback, the media source will not update
     // the media duration (which is what timeOffset is provided as) before we need to process the next chunk.
 
-    if (!Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(lastEndDTS)) {
+    if (!Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(lastEndDTS)) {
       lastEndDTS = this.lastEndDTS = timeOffset || 0;
     } // The binary segment data is added to the videoTrack in the mp4demuxer. We don't check to see if the data is only
     // audio or video (or both); adding it to video was an arbitrary choice.
@@ -18763,7 +18763,7 @@ var PassThroughRemuxer = /*#__PURE__*/function () {
       this.emitInitSegment = false;
     }
 
-    if (!Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(initPTS)) {
+    if (!Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(initPTS)) {
       this.initPTS = initSegment.initPTS = initPTS = computeInitPTS(initData, data, lastEndDTS);
     }
 
@@ -19721,7 +19721,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "alignPDT", function() { return alignPDT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "alignFragmentByPDTDelta", function() { return alignFragmentByPDTDelta; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "alignMediaPlaylistByPDT", function() { return alignMediaPlaylistByPDT; });
-/* harmony import */ var _Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
+/* harmony import */ var _home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
 /* harmony import */ var _logger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./logger */ "./src/utils/logger.ts");
 /* harmony import */ var _controller_level_helper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../controller/level-helper */ "./src/controller/level-helper.ts");
 
@@ -19838,7 +19838,7 @@ function alignDiscontinuities(lastFrag, details, lastLevel) {
   if (shouldAlignOnDiscontinuities(lastFrag, lastLevel, details)) {
     var referenceFrag = findDiscontinuousReferenceFrag(lastLevel.details, details);
 
-    if (referenceFrag && Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(referenceFrag.start)) {
+    if (referenceFrag && Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(referenceFrag.start)) {
       _logger__WEBPACK_IMPORTED_MODULE_1__["logger"].log("Adjusting PTS using last level due to CC increase within current level " + details.url);
       adjustSlidingStart(referenceFrag.start, details);
     }
@@ -19866,7 +19866,7 @@ function alignPDT(details, lastDetails) {
 
   var sliding = (newPDT - lastPDT) / 1000 + lastDetails.fragments[0].start;
 
-  if (sliding && Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(sliding)) {
+  if (sliding && Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(sliding)) {
     _logger__WEBPACK_IMPORTED_MODULE_1__["logger"].log("Adjusting PTS using programDateTime delta " + (newPDT - lastPDT) + "ms, sliding:" + sliding.toFixed(3) + " " + details.url + " ");
     adjustSlidingStart(sliding, details);
   }
@@ -20085,7 +20085,7 @@ var EWMA = /*#__PURE__*/function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchSupported", function() { return fetchSupported; });
-/* harmony import */ var _Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
+/* harmony import */ var _home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/polyfills/number */ "./src/polyfills/number.ts");
 /* harmony import */ var _loader_load_stats__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../loader/load-stats */ "./src/loader/load-stats.ts");
 /* harmony import */ var _demux_chunk_cache__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../demux/chunk-cache */ "./src/demux/chunk-cache.ts");
 
@@ -20205,7 +20205,7 @@ var FetchLoader = /*#__PURE__*/function () {
       stats.loading.first = Math.max(self.performance.now(), stats.loading.start);
       stats.total = parseInt(response.headers.get('Content-Length') || '0');
 
-      if (onProgress && Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(config.highWaterMark)) {
+      if (onProgress && Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(config.highWaterMark)) {
         return _this.loadProgressively(response, stats, context, config.highWaterMark, onProgress);
       }
 
@@ -20224,7 +20224,7 @@ var FetchLoader = /*#__PURE__*/function () {
         data: responseData
       };
 
-      if (onProgress && !Object(_Users_masuda_Develop_IFC_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(config.highWaterMark)) {
+      if (onProgress && !Object(_home_masuda_dev_PlayerSDK_Web_hls_js_src_polyfills_number__WEBPACK_IMPORTED_MODULE_0__["isFiniteNumber"])(config.highWaterMark)) {
         onProgress(stats, context, responseData, response);
       }
 

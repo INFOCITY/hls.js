@@ -150,9 +150,7 @@ export class SubtitleStreamController
       ) {
         return;
       }
-      const trackDetails = levels[currentTrackId].details as LevelDetails;
-      const targetDuration = Math.min(trackDetails.targetduration, MAX_TARGET_DURATION);
-      const endOffsetSubtitles = endOffset - targetDuration;
+      const endOffsetSubtitles = endOffset - 1;
       if (endOffsetSubtitles <= 0) {
         return;
       }
@@ -356,7 +354,7 @@ export class SubtitleStreamController
       const { config, media } = this;
       const bufferedInfo = BufferHelper.bufferedInfo(
         this.mediaBufferTimeRanges,
-        media.currentTime - targetDuration,
+        media.currentTime,
         config.maxBufferHole
       );
       const { end: targetBufferTime, len: bufferLen } = bufferedInfo;
