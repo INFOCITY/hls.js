@@ -1131,7 +1131,7 @@ export function parsePssh(initData: ArrayBuffer) {
   result.systemId = Hex.hexDump(new Uint8Array(initData, 12, 16));
   const dataSizeOrKidCount = view.getUint32(28);
   if (result.version === 0) {
-    if (boxSize - 32 < dataSizeOrKidCount) {
+    if (boxSize - 32 < dataSizeOrKidCount || dataSizeOrKidCount < 14) {
       return null;
     }
     result.data = new Uint8Array(initData, 32, dataSizeOrKidCount);

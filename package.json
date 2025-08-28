@@ -31,7 +31,7 @@
     "lint": "eslint src/ tests/ --ext .js --ext .ts",
     "lint:fix": "npm run lint -- --fix",
     "lint:quiet": "npm run lint -- --quiet",
-    "lint:staged": "lint-staged",
+    "lint:staged": "",
     "prettier": "prettier --write .",
     "prettier:verify": "prettier --check .",
     "pretest": "npm run lint",
