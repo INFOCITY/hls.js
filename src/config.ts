@@ -34,6 +34,8 @@ import type {
 import type { CuesInterface } from './utils/cues';
 import type { ILogger } from './utils/logger';
 import type { KeySystems, MediaKeyFunc } from './utils/mediakeys-helper';
+import type { CmcdCustomKey } from '@svta/common-media-library/cmcd/CmcdCustomKey';
+import type { CmcdHeaderField } from '@svta/common-media-library/cmcd/CmcdHeaderField';
 
 export type ABRControllerConfig = {
   abrEwmaFastLive: number;
@@ -67,11 +69,15 @@ export type CapLevelControllerConfig = {
   capLevelToPlayerSize: boolean;
 };
 
+export type CmcdCustomKeyValue = Record<CmcdCustomKey, string | number | boolean>;
+
 export type CMCDControllerConfig = {
   sessionId?: string;
   contentId?: string;
   useHeaders?: boolean;
   includeKeys?: string[];
+  customHeader?: Record<CmcdHeaderField, CmcdCustomKeyValue>;
+  customQuery?: CmcdCustomKeyValue;
 };
 
 export type DRMSystemOptions = {

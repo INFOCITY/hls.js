@@ -8,6 +8,7 @@ import type {
   FragmentLoaderConstructor,
   HlsConfig,
   PlaylistLoaderConstructor,
+  CmcdCustomKeyValue,
 } from '../config';
 import type Hls from '../hls';
 import type { Fragment, Part } from '../loader/fragment';
@@ -23,6 +24,8 @@ import type {
   PlaylistLoaderContext,
 } from '../types/loader';
 import type { Cmcd } from '@svta/common-media-library/cmcd/Cmcd';
+import type { CmcdHeaderField } from '@svta/common-media-library/cmcd/CmcdHeaderField';
+import type { CmcdCustomKey } from '@svta/common-media-library/cmcd/CmcdCustomKey';
 import type { CmcdEncodeOptions } from '@svta/common-media-library/cmcd/CmcdEncodeOptions';
 
 /**
@@ -42,6 +45,8 @@ export default class CMCDController implements ComponentAPI {
   private buffering: boolean = true;
   private audioBuffer?: ExtendedSourceBuffer;
   private videoBuffer?: ExtendedSourceBuffer;
+  private customHeader?: Record<CmcdHeaderField, CmcdCustomKeyValue>;
+  private customQuery?: CmcdCustomKeyValue;
 
   constructor(hls: Hls) {
     this.hls = hls;
@@ -56,6 +61,13 @@ export default class CMCDController implements ComponentAPI {
       this.cid = cmcd.contentId;
       this.useHeaders = cmcd.useHeaders === true;
       this.includeKeys = cmcd.includeKeys;
+
+      if (this.useHeaders) {
+        this.customHeader = cmcd.customHeader;
+      } else {
+        this.customQuery = cmcd.customQuery;
+      }
+
       this.registerListeners();
     }
   }
@@ -140,6 +152,11 @@ export default class CMCDController implements ComponentAPI {
       cid: this.cid,
       pr: this.media?.playbackRate,
       mtp: this.hls.bandwidthEstimate / 1000,
+      ...this.customHeader?.['CMCD-Object'],
+      ...this.customHeader?.['CMCD-Request'],
+      ...this.customHeader?.['CMCD-Session'],
+      ...this.customHeader?.['CMCD-Status'],
+      ...this.customQuery,
     };
   }
 
@@ -182,6 +199,15 @@ export default class CMCDController implements ComponentAPI {
     if (this.useHeaders) {
       if (!context.headers) {
         context.headers = {};
+      }
+
+      if (this.customHeader) {
+        options.customHeaderMap = {
+          "CMCD-Object": Object.keys(this.customHeader['CMCD-Object']) as CmcdCustomKey[],
+          "CMCD-Request": Object.keys(this.customHeader['CMCD-Request']) as CmcdCustomKey[],
+          "CMCD-Session": Object.keys(this.customHeader['CMCD-Session']) as CmcdCustomKey[],
+          "CMCD-Status": Object.keys(this.customHeader['CMCD-Status']) as CmcdCustomKey[],
+        };
       }
 
       appendCmcdHeaders(context.headers, data, options);

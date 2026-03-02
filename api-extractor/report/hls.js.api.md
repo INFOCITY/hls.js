@@ -4,6 +4,9 @@
 
 ```ts
 
+import type { CmcdCustomKey } from '@svta/common-media-library/cmcd/CmcdCustomKey';
+import type { CmcdHeaderField } from '@svta/common-media-library/cmcd/CmcdHeaderField';
+
 // Warning: (ae-missing-release-tag) "AbrComponentAPI" is part of the package's API, but it is missing a release tag (@alpha, @beta, @public, or @internal)
 //
 // @public (undocumented)
@@ -904,6 +907,8 @@ export type CMCDControllerConfig = {
     contentId?: string;
     useHeaders?: boolean;
     includeKeys?: string[];
+    customHeader?: Record<CmcdHeaderField, CmcdCustomKeyValue>;
+    customQuery?: CmcdCustomKeyValue;
 };
 
 // Warning: (ae-missing-release-tag) "CodecsParsed" is part of the package's API, but it is missing a release tag (@alpha, @beta, @public, or @internal)
@@ -4862,6 +4867,10 @@ export type VideoSelectionOption = {
     allowedVideoRanges?: Array<VideoRange>;
     videoCodec?: string;
 };
+
+// Warnings were encountered during analysis:
+//
+// src/config.ts:79:3 - (ae-forgotten-export) The symbol "CmcdCustomKeyValue" needs to be exported by the entry point hls.d.ts
 
 // (No @packageDocumentation comment for this package)
 

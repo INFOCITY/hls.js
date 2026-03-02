@@ -1,3 +1,6 @@
+import type { CmcdCustomKey } from '@svta/common-media-library/cmcd/CmcdCustomKey';
+import type { CmcdHeaderField } from '@svta/common-media-library/cmcd/CmcdHeaderField';
+
 export declare interface AbrComponentAPI extends ComponentAPI {
     firstAutoLevel: number;
     forcedAutoLevel: number;
@@ -708,6 +711,8 @@ export declare class CMCDController implements ComponentAPI {
     private buffering;
     private audioBuffer?;
     private videoBuffer?;
+    private customHeader?;
+    private customQuery?;
     constructor(hls: Hls);
     private registerListeners;
     private unregisterListeners;
@@ -762,7 +767,11 @@ export declare type CMCDControllerConfig = {
     contentId?: string;
     useHeaders?: boolean;
     includeKeys?: string[];
+    customHeader?: Record<CmcdHeaderField, CmcdCustomKeyValue>;
+    customQuery?: CmcdCustomKeyValue;
 };
+
+declare type CmcdCustomKeyValue = Record<CmcdCustomKey, string | number | boolean>;
 
 export declare interface CodecsParsed {
     audioCodec?: string;

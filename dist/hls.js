@@ -21439,6 +21439,8 @@
       this.buffering = true;
       this.audioBuffer = void 0;
       this.videoBuffer = void 0;
+      this.customHeader = void 0;
+      this.customQuery = void 0;
       this.onWaiting = function () {
         if (_this.initialized) {
           _this.starved = true;
@@ -21501,6 +21503,11 @@
         this.cid = cmcd.contentId;
         this.useHeaders = cmcd.useHeaders === true;
         this.includeKeys = cmcd.includeKeys;
+        if (this.useHeaders) {
+          this.customHeader = cmcd.customHeader;
+        } else {
+          this.customQuery = cmcd.customQuery;
+        }
         this.registerListeners();
       }
     }
@@ -21550,15 +21557,15 @@
      * Create baseline CMCD data
      */
     _proto.createData = function createData() {
-      var _this$media;
-      return {
+      var _this$media, _this$customHeader, _this$customHeader2, _this$customHeader3, _this$customHeader4;
+      return _objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2({
         v: 1,
         sf: CmcdStreamingFormat.HLS,
         sid: this.sid,
         cid: this.cid,
         pr: (_this$media = this.media) == null ? void 0 : _this$media.playbackRate,
         mtp: this.hls.bandwidthEstimate / 1000
-      };
+      }, (_this$customHeader = this.customHeader) == null ? void 0 : _this$customHeader['CMCD-Object']), (_this$customHeader2 = this.customHeader) == null ? void 0 : _this$customHeader2['CMCD-Request']), (_this$customHeader3 = this.customHeader) == null ? void 0 : _this$customHeader3['CMCD-Session']), (_this$customHeader4 = this.customHeader) == null ? void 0 : _this$customHeader4['CMCD-Status']), this.customQuery);
     }
 
     /**
@@ -21595,6 +21602,14 @@
       if (this.useHeaders) {
         if (!context.headers) {
           context.headers = {};
+        }
+        if (this.customHeader) {
+          options.customHeaderMap = {
+            "CMCD-Object": Object.keys(this.customHeader['CMCD-Object']),
+            "CMCD-Request": Object.keys(this.customHeader['CMCD-Request']),
+            "CMCD-Session": Object.keys(this.customHeader['CMCD-Session']),
+            "CMCD-Status": Object.keys(this.customHeader['CMCD-Status'])
+          };
         }
         appendCmcdHeaders(context.headers, data, options);
       } else {
